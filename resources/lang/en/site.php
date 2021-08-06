@@ -135,4 +135,40 @@ return [
         'address'=>'Address',
 
 
+        //students
+        'promotion_management' => 'Promotion Management',
+        'error_promotions' => 'There is no data in students table',
+        'students_promotions' => 'Students Promotion',
+        'student_name' => 'Student Name',
+        'students' => 'Students',
+        'add_student'=> 'Add Students',
+        'personal_information' => 'Personal Information',
+        'name_ar' => 'Name ar',
+        'name_en' => 'Name en',
+        'email' => 'Email',
+        'password' => 'Password',
+        'gender' => 'Gender',
+        'nationality' => 'Nationality',
+        'blood_type' => 'Blood Type',
+        'date_of_birth' => 'Date Of Birth',
+        'student Information' => 'Student Information',
+        'grade' => 'Grade',
+        'classrooms' => 'Classrooms',
+        'section' => 'Section',
+        'parent' => 'Parent',
+        'student_edit'=> 'Edit Student',
+        'academic_year' => 'Academic Year',
+        'attachments' => 'Attachments',
+        'student_details' => 'Student Details',
+        'deleted_student' => 'Delete student data',
+        'deleted_student_title' => 'Are you sure to delete the student ?',
+        'delete_attachment' => 'Delete_attachment',
+        'delete_attachment_title' => 'Are you sure to delete the attachment?',
+        'filename' => 'filename',
+        'created_at' => 'created_at',
+        'download' => 'Download',
+        'delete' => 'Delete',
+        'list_students' => 'List Students'
+
+
 ];

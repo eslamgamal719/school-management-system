@@ -25,15 +25,6 @@ class SectionController extends Controller
         return view('pages.sections.index', compact('grades', 'list_grades', 'teachers'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -112,10 +103,18 @@ class SectionController extends Controller
         }
     }
 
-
+    
     public function get_classes($grade_id)
     {
         $classes = Classroom::where('grade_id', $grade_id)->pluck('name', 'id');
         return $classes;
     }
+
+
+    public function get_sections($classroom_id)
+    {
+        $sections = Section::where('class_id', $classroom_id)->pluck('name', 'id');
+        return $sections;
+    }
+    
 }

@@ -77,6 +77,23 @@
                         </ul>
                     </li>
 
+                     <!-- students-->
+                     <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#students-menu">
+                            <div class="pull-left"><i class="fa fa-graduation-cap"></i></i></i><span
+                                    class="right-nav-text">{{trans('site.students')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="students-menu" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="{{route('students.create')}}">{{trans('site.add_student')}}</a></li>
+                            <li><a href="{{route('students.index')}}">{{trans('site.list_students')}}</a></li>
+                            <li><a href="{{ route('promotions.index') }}">{{trans('site.students_promotions')}}</a></li>
+                            <li> <a href="{{route('promotions.create')}}">{{ trans('site.promotion_management') }}</a> </li>
+                        </ul>
+                    </li>
+
+
                     <!-- Teachers-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Teachers-menu">
