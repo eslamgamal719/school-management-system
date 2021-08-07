@@ -142,6 +142,11 @@ return [
 
 
     //students
+    'add_promotion' => 'ترقية جديدة',
+    'list_promotions' => 'قائمة الترقيات',
+    'add_graduate' => 'اضافة خريج جديد',
+    'graduate_students' => 'الطلاب الخريجين',
+    'list_graduate' => 'قائمة الخريجين',
     'promotion_management' => 'ادارة ترقية الطلاب',
     'error_promotions' => 'لا توجد بيانات فى جدول الطلاب',
     'students_promotions' => 'ترقية الطلاب',

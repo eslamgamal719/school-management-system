@@ -136,6 +136,11 @@ return [
 
 
         //students
+        'add_promotion' => 'New Promotion',
+        'list_promotions' => 'Promotions List',
+        'add_graduate' => 'Add New Graduated',
+        'graduate_students' => 'Graduated Students',
+        'list_graduate' => 'Graduated List',
         'promotion_management' => 'Promotion Management',
         'error_promotions' => 'There is no data in students table',
         'students_promotions' => 'Students Promotion',

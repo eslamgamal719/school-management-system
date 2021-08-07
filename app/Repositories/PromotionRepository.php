@@ -16,6 +16,14 @@ class PromotionRepository implements PromotionRepositoryInterface
         return view('pages.students.promotions.index', $data);
     }
 
+
+    public function allPromotions()
+    {
+        $promotions = Promotion::all();
+        return view('pages.students.promotions.management', compact('promotions'));
+    }
+
+
     public function store($request)
     {   
         DB::beginTransaction();
@@ -61,5 +69,53 @@ class PromotionRepository implements PromotionRepositoryInterface
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
 
+    }
+
+
+    public function destroy($request)
+    {
+        DB::beginTransaction();
+        try {
+            //change back for all records
+            if($request->page_id == 1) {
+
+                $promotions = Promotion::all();
+                foreach($promotions as $promotion) {
+                    Student::find($promotion->student_id)->update([
+                        'academic_year' => $promotion->academic_year,
+                        'grade_id'      => $promotion->from_grade,
+                        'classroom_id'  => $promotion->from_classroom,
+                        'section_id'    => $promotion->from_section,
+                    ]);
+
+                    $promotion->delete();
+                }
+
+                DB::commit();
+                toastr()->success(trans('messages.update'));
+                return redirect()->back();
+
+            } else {
+                
+                $promotion = Promotion::findOrFail($request->id);
+                Student::find($promotion->student_id)->update([
+                    'academic_year' => $promotion->academic_year,
+                    'grade_id'      => $promotion->from_grade,
+                    'classroom_id'  => $promotion->from_classroom,
+                    'section_id'    => $promotion->from_section,
+                ]);
+
+                $promotion->delete();
+
+                DB::commit();
+                toastr()->success(trans('messages.update'));
+                return redirect()->back();
+            }
+
+        } catch(\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]); 
+        }
+        
     }
 }

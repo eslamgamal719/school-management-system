@@ -32,7 +32,7 @@ class PromotionController extends Controller
      */
     public function create()
     {
-        //
+        return $this->promotion->allPromotions();
     }
 
     /**
@@ -86,8 +86,8 @@ class PromotionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        return $this->promotion->destroy($request);
     }
 }
