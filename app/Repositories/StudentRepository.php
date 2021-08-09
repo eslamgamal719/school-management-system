@@ -134,10 +134,23 @@ class StudentRepository implements StudentRepositoryInterface
    public function deleteStudent($id)
    {
        try{
-            Student::destroy($id);  //can take array of ids to multi-delete
-            //Student::findOrFail($id)->delete();
+            Student::find($id)->forceDelete();  
 
             toastr()->success(trans('messages.delete'));
+            return redirect()->route('students.index');
+
+        } catch(\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
+   }
+
+
+   public function graduateStudent($id)
+   {
+        try{
+            Student::find($id)->delete();  
+
+            toastr()->success(trans('messages.success'));
             return redirect()->route('students.index');
 
         } catch(\Exception $e) {

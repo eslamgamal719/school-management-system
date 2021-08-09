@@ -118,4 +118,18 @@ class PromotionRepository implements PromotionRepositoryInterface
         }
         
     }
+
+    public function graduateStudents($request)
+    {
+        try{
+            Student::find($request->student_id)->delete();
+            Promotion::find($request->promotion_id)->delete();  
+
+            toastr()->success(trans('messages.success'));
+            return redirect()->route('graduates.index');
+
+        } catch(\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
+    }
 }

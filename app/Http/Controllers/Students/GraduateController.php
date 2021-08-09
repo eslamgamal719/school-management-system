@@ -3,17 +3,16 @@
 namespace App\Http\Controllers\Students;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\PromotionRepositoryInterface;
+use App\Repositories\GraduateRepositoryInterface;
 use Illuminate\Http\Request;
 
-class PromotionController extends Controller
+class GraduateController extends Controller
 {
+    protected $graduate;
 
-    protected $promotion;
-
-    public function __construct(PromotionRepositoryInterface $promotion)
+    public function __construct(GraduateRepositoryInterface $graduate)
     {
-        $this->promotion = $promotion;
+        $this->graduate = $graduate;
     }
     /**
      * Display a listing of the resource.
@@ -22,7 +21,7 @@ class PromotionController extends Controller
      */
     public function index()
     {
-        return $this->promotion->index();
+        return $this->graduate->index();
     }
 
     /**
@@ -32,7 +31,7 @@ class PromotionController extends Controller
      */
     public function create()
     {
-        return $this->promotion->allPromotions();
+        return $this->graduate->create();
     }
 
     /**
@@ -43,7 +42,7 @@ class PromotionController extends Controller
      */
     public function store(Request $request)
     {
-        return $this->promotion->store($request);
+        return $this->graduate->softDeletes($request);
     }
 
     /**
@@ -75,9 +74,9 @@ class PromotionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        return $this->graduate->restoreStudent($request);
     }
 
     /**
@@ -86,13 +85,8 @@ class PromotionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        return $this->promotion->destroy($request);
-    }
-
-    public function graduate_students(Request $request)
-    {
-        return $this->promotion->graduateStudents($request);
+        return $this->graduate->destroy($id);
     }
 }

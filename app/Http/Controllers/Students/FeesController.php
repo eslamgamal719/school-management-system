@@ -3,18 +3,21 @@
 namespace App\Http\Controllers\Students;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\PromotionRepositoryInterface;
+use App\Http\Requests\FeesRequest;
+use App\Repositories\FeesRepositoryInterface;
 use Illuminate\Http\Request;
 
-class PromotionController extends Controller
+class FeesController extends Controller
 {
 
-    protected $promotion;
+    protected $fees;
 
-    public function __construct(PromotionRepositoryInterface $promotion)
+    
+    public function __construct(FeesRepositoryInterface $fees)
     {
-        $this->promotion = $promotion;
+        $this->fees = $fees;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +25,7 @@ class PromotionController extends Controller
      */
     public function index()
     {
-        return $this->promotion->index();
+        return $this->fees->index();
     }
 
     /**
@@ -32,7 +35,7 @@ class PromotionController extends Controller
      */
     public function create()
     {
-        return $this->promotion->allPromotions();
+        return $this->fees->create();
     }
 
     /**
@@ -41,9 +44,9 @@ class PromotionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FeesRequest $request)
     {
-        return $this->promotion->store($request);
+        return $this->fees->store($request);
     }
 
     /**
@@ -65,7 +68,7 @@ class PromotionController extends Controller
      */
     public function edit($id)
     {
-        //
+        return $this->fees->edit($id);
     }
 
     /**
@@ -75,9 +78,9 @@ class PromotionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FeesRequest $request, $id)
     {
-        //
+        return $this->fees->update($request, $id);
     }
 
     /**
@@ -86,13 +89,8 @@ class PromotionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        return $this->promotion->destroy($request);
-    }
-
-    public function graduate_students(Request $request)
-    {
-        return $this->promotion->graduateStudents($request);
+        return $this->fees->destroy($id);
     }
 }

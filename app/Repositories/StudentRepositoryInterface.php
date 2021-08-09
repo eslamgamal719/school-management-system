@@ -26,6 +26,9 @@ interface StudentRepositoryInterface
     //delete student
     public function deleteStudent($id);
 
+    //graduate single student
+    public function graduateStudent($id);
+
     //upload student's attachments
     public function uploadArrachments($request);
 

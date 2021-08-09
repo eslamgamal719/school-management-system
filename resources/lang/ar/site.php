@@ -183,5 +183,20 @@ return [
     'created_at' => 'تاريخ الاضافة',
     'download' => 'تحميل',
     'delete' => 'حذف',
-    'list_students' => 'قائمة الطلاب'
+    'list_students' => 'قائمة الطلاب',
+
+
+    //graduated
+    'error_graduated' => 'لا يوجد طلاب بهذا الصف',
+    'change_graduate' => 'اضافة للخرجين',
+
+    //Fees
+    'accounts'=>'الحسابات',
+    'attendance'=>'الحضور والغياب',
+    'exams'=>'الامتحانات',
+    'library'=>'المكتبة',
+    'onlineclasses'=>'حصص اونلاين',
+    'settings'=>'الاعدادات',
+    'users'=>'المستخدمين',
+    'copyright' => 'جميع الحقوق محفوظة ',
 ];

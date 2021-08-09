@@ -16,16 +16,17 @@ class GradeTableSeeder extends Seeder
         
         DB::table('grades')->delete();
 
-        Grade::create([
-            'name' => ['en' => 'Laboratory School', 'ar' => 'المرحلة الابتدائية'],
-        ]);
+        $grades = [
+            ['en' => 'Laboratory School', 'ar' => 'المرحلة الابتدائية'],
+            ['en' => 'Primary School', 'ar' => 'المرحلة الاعدادية'],
+            ['en' => 'Secondary School', 'ar' => 'المرحلة الثانوية']
+        ];
 
-        Grade::create([
-            'name' => ['en' => 'Primary School', 'ar' => 'المرحلة الاعدادية'],
-        ]);
+        foreach($grades as $grade) {
+            Grade::create([
+                'name' => $grade,
+            ]);
+        }
 
-        Grade::create([
-            'name' => ['en' => 'Secondary School', 'ar' => 'المرحلة الثانوية'],
-        ]);
     }
 }

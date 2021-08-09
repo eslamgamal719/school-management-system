@@ -173,7 +173,19 @@ return [
         'created_at' => 'created_at',
         'download' => 'Download',
         'delete' => 'Delete',
-        'list_students' => 'List Students'
+        'list_students' => 'List Students',
 
+        //graduated
+        'error_graduated' => 'There is no students in this classroom',
+        'change_graduate' => 'Graduate',
 
+        //Fees
+        'Accounts'=>'Accounts',
+        'Attendance'=>'Attendance',
+        'Exams'=>'Exams',
+        'library'=>'Library',
+        'Onlineclasses'=>'Online classes',
+        'Settings'=>'Settings',
+        'Users'=>'Users',
+        'Copyright' => 'Copyright',
 ];

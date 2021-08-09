@@ -35,6 +35,7 @@ class CreateStudentsTable extends Migration
             $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
             $table->bigInteger('parent_id')->unsigned();
             $table->foreign('parent_id')->references('id')->on('my_parents')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

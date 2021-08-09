@@ -48,6 +48,7 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        @isset($promotions)
                                         @foreach($promotions as $promotion)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
@@ -63,13 +64,15 @@
                                                 <td>
 
                                                     <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#delete_one{{$promotion->id}}" style="display: inline-block">ارجاع الطالب</button>
-                                                    <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#" >تخرج الطالب</button>
+                                                    <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#graduate_student{{$promotion->id}}" >تخرج الطالب</button>
                                                 </td>
                                             </tr>
 
                                         @include('pages.students.promotions.delete_all')
                                         @include('pages.students.promotions.delete_one')
+                                        @include('pages.students.promotions.graduate')
                                         @endforeach
+                                        @endisset
                                     </table>
                                 </div>
                             </div>

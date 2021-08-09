@@ -12,4 +12,6 @@ interface PromotionRepositoryInterface
     public function store($request);
 
     public function destroy($request);
+
+    public function graduateStudents($request);
 }

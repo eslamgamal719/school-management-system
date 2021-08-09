@@ -3,18 +3,21 @@
 namespace App\Http\Controllers\Students;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\PromotionRepositoryInterface;
+use App\Models\Fee;
+use App\Repositories\FeesInvoicesRepositoryInterface;
 use Illuminate\Http\Request;
 
-class PromotionController extends Controller
+class FeesInvoicesController extends Controller
 {
 
-    protected $promotion;
+    protected $fees_invoices;
 
-    public function __construct(PromotionRepositoryInterface $promotion)
+    public function __construct(FeesInvoicesRepositoryInterface $fees_invoices)
     {
-        $this->promotion = $promotion;
+        $this->fees_invoices = $fees_invoices;
     }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +25,7 @@ class PromotionController extends Controller
      */
     public function index()
     {
-        return $this->promotion->index();
+        return $this->fees_invoices->index();
     }
 
     /**
@@ -32,7 +35,7 @@ class PromotionController extends Controller
      */
     public function create()
     {
-        return $this->promotion->allPromotions();
+        //
     }
 
     /**
@@ -43,7 +46,7 @@ class PromotionController extends Controller
      */
     public function store(Request $request)
     {
-        return $this->promotion->store($request);
+        return $this->fees_invoices->store($request);
     }
 
     /**
@@ -54,7 +57,7 @@ class PromotionController extends Controller
      */
     public function show($id)
     {
-        //
+        return $this->fees_invoices->show($id);
     }
 
     /**
@@ -65,7 +68,7 @@ class PromotionController extends Controller
      */
     public function edit($id)
     {
-        //
+        return $this->fees_invoices->edit($id);
     }
 
     /**
@@ -77,7 +80,7 @@ class PromotionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return $this->fees_invoices->update($request, $id);
     }
 
     /**
@@ -86,13 +89,14 @@ class PromotionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        return $this->promotion->destroy($request);
+        return $this->fees_invoices->destroy($id);
     }
 
-    public function graduate_students(Request $request)
+
+    public function fees_amount($id)
     {
-        return $this->promotion->graduateStudents($request);
+        return $this->fees_invoices->feesAmount($id);
     }
 }

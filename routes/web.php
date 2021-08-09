@@ -31,6 +31,7 @@ Route::group( ['prefix' => LaravelLocalization::setLocale(),
     
     
     Route::resource('students', 'Students\StudentController');
+    Route::get('student/{id}', 'Students\StudentController@graduate_student')->name('student.graduate');
     Route::get('get-classes/{id}', 'Students\StudentController@get_classes');
     Route::get('get-sections/{id}', 'Students\StudentController@get_sections');
     Route::post('upload_attachments', 'Students\StudentController@upload_attachments')->name('upload.attachments');
@@ -39,6 +40,12 @@ Route::group( ['prefix' => LaravelLocalization::setLocale(),
     Route::post('delete_attachment', 'Students\StudentController@delete_attachment')->name('delete_attachment');
 
     Route::resource('promotions', 'Students\PromotionController');
+    Route::post('promotion/{id}', 'Students\PromotionController@graduate_students')->name('graduate.students');
+    Route::resource('graduates', 'Students\GraduateController');
+
+    Route::resource('fees', 'Students\FeesController');
+    Route::resource('fees_invoices', 'Students\FeesInvoicesController');
+    Route::get('fees_amount/{fee_id}', 'Students\FeesInvoicesController@fees_amount')->name('fees.amount');
 
     //livewire routes
     Route::view('add_parent', 'livewire.show_form');

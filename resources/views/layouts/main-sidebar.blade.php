@@ -101,8 +101,8 @@
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Graduate students">{{trans('site.graduate_students')}}<div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
                         <ul id="Graduate students" class="collapse">
-                            <li> <a href="{{-- route('Graduated.create') --}}">{{trans('site.add_graduate')}}</a> </li>
-                            <li> <a href="{{-- route('Graduated.index') --}}">{{trans('site.list_graduate')}}</a> </li>
+                            <li> <a href="{{ route('graduates.create') }}">{{trans('site.add_graduate')}}</a> </li>
+                            <li> <a href="{{ route('graduates.index') }}">{{trans('site.list_graduate')}}</a> </li>
                         </ul>
                     </li>
                 </ul>
@@ -119,6 +119,20 @@
                         </a>
                         <ul id="Teachers-menu" class="collapse" data-parent="#sidebarnav">
                             <li> <a href="{{route('teachers.index')}}">{{trans('site.list_teachers')}}</a> </li>
+                        </ul>
+                    </li>
+
+                    <!-- Fees -->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#Accounts-menu">
+                            <div class="pull-left"><i class="fa fa-money"></i><span
+                                    class="right-nav-text">{{trans('site.accounts')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="Accounts-menu" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{ route('fees.index') }}">الرسوم الدراسية</a> </li>
+                            <li> <a href="{{ route('fees_invoices.index') }}">الفواتير</a> </li>
                         </ul>
                     </li>
 
