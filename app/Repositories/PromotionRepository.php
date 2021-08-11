@@ -129,7 +129,7 @@ class PromotionRepository implements PromotionRepositoryInterface
             return redirect()->route('graduates.index');
 
         } catch(\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
 }

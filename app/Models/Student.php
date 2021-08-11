@@ -58,10 +58,17 @@ class Student extends Model
         return $this->belongsTo(MyParent::class, 'parent_id');
     }
 
+    public function student_account()
+    {
+        return $this->hasMany(StudentAccount::class, 'student_id');
+    }
+
 
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');
     }
+
+
 
 }

@@ -9,7 +9,18 @@ class StudentAccount extends Model
     
     protected $table = 'student_accounts';
 
-    protected $fillable = ['date', 'type', 'fee_invoice_id', 'student_id', 'debit', 'credit', 'description'];
+    protected $fillable = [
+        'date', 
+        'type', 
+        'fee_invoice_id', 
+        'receipt_id', 
+        'processing_id', 
+        'student_id',
+        'payment_id', 
+        'debit', 
+        'credit', 
+        'description'
+    ];
 
 
  

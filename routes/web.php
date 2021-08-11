@@ -47,6 +47,14 @@ Route::group( ['prefix' => LaravelLocalization::setLocale(),
     Route::resource('fees_invoices', 'Students\FeesInvoicesController');
     Route::get('fees_amount/{fee_id}', 'Students\FeesInvoicesController@fees_amount')->name('fees.amount');
 
+    Route::resource('processing_fees', 'Students\ProcessingFeeController');
+
+    Route::resource('receipt_students', 'Students\ReceiptStudentController');
+
+    Route::resource('payments', 'Students\PaymentController');
+
+
+
     //livewire routes
     Route::view('add_parent', 'livewire.show_form');
 

@@ -133,6 +133,9 @@
                         <ul id="Accounts-menu" class="collapse" data-parent="#sidebarnav">
                             <li> <a href="{{ route('fees.index') }}">الرسوم الدراسية</a> </li>
                             <li> <a href="{{ route('fees_invoices.index') }}">الفواتير</a> </li>
+                            <li> <a href="{{route('receipt_students.index')}}">سندات القبض</a> </li>
+                            <li> <a href="{{route('processing_fees.index')}}"> سندات استبعاد الرسوم</a> </li>
+                            <li> <a href="{{route('payments.index')}}"> سندات الصرف</a> </li>
                         </ul>
                     </li>
 

@@ -63,10 +63,13 @@
                                                             <a class="dropdown-item" href="{{route('students.show', $student->id)}}"><i style="color: #ffc107" class="far fa-eye "></i>&nbsp;  عرض بيانات الطالب</a>
                                                             <a class="dropdown-item" href="{{route('students.edit', $student->id)}}"><i style="color:green" class="fa fa-edit"></i>&nbsp;  تعديل بيانات الطالب</a>
                                                             <a class="dropdown-item" href="{{route('student.graduate', $student->id)}}"><i style="color:green" class="fa fa-graduation-cap"></i>&nbsp;  {{ trans('site.change_graduate') }}</a>
-                                                            <a class="dropdown-item" href="{{route('fees_invoices.show', $student->id)}}"><i style="color: #0000cc" class="fa fa-plus"></i>&nbsp;اضافة فاتورة رسوم&nbsp;</a>
+                                                            <a class="dropdown-item" href="{{route('fees_invoices.show', $student->id)}}"><i style="color: #0000cc" class="fa fa-money"></i>&nbsp;اضافة فاتورة رسوم&nbsp;</a>
+                                                            <a class="dropdown-item" href="{{route('receipt_students.show', $student->id)}}"><i style="color: #9dc8e2" class="fa fa-money"></i>&nbsp; &nbsp;سند قبض</a>
+                                                            <a class="dropdown-item" href="{{route('processing_fees.show', $student->id)}}"><i style="color: #9dc8dd" class="fa fa-money"></i>&nbsp; &nbsp; استبعاد رسوم</a>
+                                                            <a class="dropdown-item" href="{{route('payments.show', $student->id)}}"><i style="color:goldenrod" class="fa fa-money"></i>&nbsp; &nbsp;سند صرف</a>
                                                             <a class="dropdown-item" data-target="#delete_student{{ $student->id }}" data-toggle="modal" href="#delete_student{{ $student->id }}"><i style="color: red" class="fa fa-trash"></i>&nbsp;  حذف بيانات الطالب</a>
                                                         </div>
-                                                    </div>
+                                                    </div> 
                                                 </td>
                                             </tr>
                                         @include('pages.students.delete')
